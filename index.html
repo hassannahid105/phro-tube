@@ -4,8 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHero Tube</title>
+    <!-- * daisyUi -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h3>Ptube</h3>
+    <!--* header -->
+    <header class="mt-6">
+      <div class="flex justify-between items-center p-6">
+        <p class="font-bold text-3xl">
+          <span class="text-red-500">PH</span> Tube
+        </p>
+        <button class="btn btn-active text-xl">Sort by view</button>
+        <button class="btn btn-secondary">Blog</button>
+      </div>
+      <hr class="mx-6" />
+    </header>
+    <!-- *main part -->
+    <main>
+      <div class="flex items-center justify-center gap-4 mt-6">
+        <button
+          class="bg-green-400 px-4 py-1 font-semibold rounded-md text-white uppercase"
+        >
+          Default
+        </button>
+        <button
+          class="bg-green-400 px-4 py-1 font-semibold rounded-md text-white uppercase"
+        >
+          Default
+        </button>
+      </div>
+    </main>
+    <script src="/js/phero.js"></script>
   </body>
 </html>
