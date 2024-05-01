@@ -25,7 +25,9 @@
           <span class="text-red-500">PH</span> Tube
         </p>
         <button class="btn btn-active text-xl">Sort by view</button>
-        <button class="btn btn-secondary">Blog</button>
+        <a href="./blog/blog.html">
+          <button class="btn btn-secondary">Blog</button>
+        </a>
       </div>
       <hr class="mx-6" />
     </header>
@@ -44,7 +46,10 @@
       </div>
       <!--* video card  -->
       <section>
-        <div id="video-container" class="grid grid-cols-4 gap-8 p-8"></div>
+        <div
+          id="video-container"
+          class="grid grid-cols-1 md:grid-col-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8"
+        ></div>
       </section>
     </main>
     <script src="/js/phero.js"></script>

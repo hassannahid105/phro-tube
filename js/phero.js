@@ -12,7 +12,7 @@ const displayButton = (categories) => {
   // categoryContainer.innerHTML = "";
   categories.forEach((cate) => {
     const button = document.createElement("button");
-    button.innerHTML = ` 
+    button.innerHTML = `
     <button
     class="bg-green-400 px-4 py-1 font-semibold rounded-md text-white uppercase"      onclick="videoData(${cate.category_id})">
     ${cate.category}
@@ -47,10 +47,14 @@ const displayVideo = (videos) => {
       />
     </figure>
     <div class="p-6">
-    
+
       <!-- video time -->
       <div class=" absolute">
-      <p class="bg-black text-white py-1 px-4 rounded-lg text-sm inline-block relative -top-16 left-44">10hrs 50min ago</p>
+      <p class="${
+        video?.others?.posted_date ? "bg-black" : ""
+      } text-white py-1 px-4 rounded-lg text-sm inline-block relative -top-16 left-36">${
+      video.others?.posted_date ? timeConvert(video.others.posted_date) : ""
+    }</p>
       </div>
       <!-- thanbnile and avatar -->
       <div class="flex  gap-2 items-center mb-3">
@@ -58,7 +62,7 @@ const displayVideo = (videos) => {
           <div class="w-10 rounded-full ">
             <img
               src="${video?.authors[0]?.profile_picture}"
-             
+
             />
           </div>
         </div>
@@ -74,7 +78,7 @@ const displayVideo = (videos) => {
             ? '<i class="fa-solid fa-circle-check text-blue-600 text-xl"></i>'
             : ""
         }</p>
-       
+
       </div>
       <p class="ml-5">${video?.others?.views}</p>
     </div>
@@ -85,3 +89,15 @@ const displayVideo = (videos) => {
 };
 loadData();
 videoData("1000");
+
+// ! time convater
+const timeConvert = (time) => {
+  const timeDevided = time / 3600;
+  const numToStr = timeDevided.toString();
+  const strToSplit = numToStr.split(".");
+  const showTime = `${strToSplit[0].slice(0, 2)}hrs ${strToSplit[1].slice(
+    0,
+    2
+  )}min ago`;
+  return showTime;
+};
